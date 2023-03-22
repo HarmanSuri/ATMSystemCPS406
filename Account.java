@@ -1,5 +1,5 @@
 
-public class Account {
+abstract class Account {
   private double balance, withdrawLimit;
   private int accID;
 
@@ -21,21 +21,18 @@ public class Account {
     balance = this.balance;
   }
 
-  public boolean deposit(double cash) {
-    setBalance(balance + cash);
-    return true;
-  }
+  public abstract boolean deposit(double cash);
 
-  public boolean withdraw(double cash) {
-    if (cash < balance && cash <= withdrawLimit) {
-      setBalance(balance - cash);
-      return true;
-    }
-    return false;
-  }
+  public abstract boolean withdraw(double cash);
 
   public boolean transfer(double cash, Account otherAcc) {
-    return false;
+    if (cash >= this.balance) {
+      return false;
+    }
+    otherAcc.setBalance(otherAcc.getBalance() + cash);
+    this.setBalance(this.balance - cash);
+    return true;
+
   }
   
 }

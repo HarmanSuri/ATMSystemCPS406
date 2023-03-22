@@ -1,7 +1,13 @@
+import javax.swing.*;
 public class Test {
   public static void main(String[] args) {
-    System.out.println("Hello, Word!");
-    System.out.println("Hello GUys");
-    System.out.println("System.out.println('');");
+    JFrame f = new JFrame();
+    JButton b = new JButton("click");
+    b.setBounds(130,100,100, 40);
+
+    f.add(b);
+    f.setSize(400,500);//400 width and 500 height  
+    f.setLayout(null);//using no layout managers  
+    f.setVisible(true);//making the frame visible  
   }
 }
