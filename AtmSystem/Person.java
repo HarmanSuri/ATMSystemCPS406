@@ -3,9 +3,9 @@ package AtmSystem;
 public class Person {
   private String name;
   private String address;
-  private int phoneNum;
+  private String phoneNum;
 
-  public Person(String name, String address, int phoneNum) {
+  public Person(String name, String address, String phoneNum) {
     this.name = name;
     this.address = address;
     this.phoneNum = phoneNum;
@@ -19,7 +19,7 @@ public class Person {
     return address;
   }
 
-  public int getPhoneNumber() {
+  public String getPhoneNumber() {
     return phoneNum;
   }
 
@@ -31,7 +31,7 @@ public class Person {
     address = newAddress;
   }
 
-  public void setPhoneNumber(int newPhoneNumber) {
+  public void setPhoneNumber(String newPhoneNumber) {
     phoneNum = newPhoneNumber;
   }
 }
