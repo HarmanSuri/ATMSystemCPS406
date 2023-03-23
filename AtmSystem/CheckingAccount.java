@@ -1,3 +1,6 @@
+package AtmSystem;
+
+
 public class CheckingAccount extends Account {
   private double balance, withdrawLimit, minDepositAmount;
   private int accID;

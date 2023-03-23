@@ -1,3 +1,5 @@
+package AtmSystem;
+
 import java.util.LinkedList;
 
 public class Customer extends Person {

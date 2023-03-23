@@ -1,6 +1,7 @@
+package AtmSystem;
+
 import java.util.HashMap;
 import java.util.LinkedList;
-
 public class Bank {
   private String name;
   private String address;
