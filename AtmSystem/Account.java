@@ -18,8 +18,16 @@ abstract class Account {
     return accID;
   }
 
+  public double getWithdrawLimit() {
+    return withdrawLimit;
+  }
+
   public void setBalance(double balance) {
-    balance = this.balance;
+    this.balance = balance;
+  }
+
+  public void setWithdrawLimit(double withdrawLimit) {
+    this.withdrawLimit = withdrawLimit;
   }
 
   public abstract boolean deposit(double cash);

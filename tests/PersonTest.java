@@ -10,34 +10,34 @@ public class PersonTest {
 
   @Test
   public void testGetName() {
-    assertEquals(person.getName(), "John Doe");
+    assertEquals("John Doe", person.getName());
   }
 
   @Test
   public void testGetAddress() {
-    assertEquals(person.getAddress(), "123 Nowhere St.");
+    assertEquals("123 Nowhere St.", person.getAddress());
   }
 
   @Test
   public void testGetPhoneNumber() {
-    assertEquals(person.getPhoneNumber(), "123-456-7890");
+    assertEquals("123-456-7890", person.getPhoneNumber());
   }
 
   @Test
   public void testSetName() {
     person.setName("Scott Smith");
-    assertEquals(person.getName(), "Scott Smith");
+    assertEquals("Scott Smith", person.getName());
   }
 
   @Test
   public void testSetAddress() {
     person.setAddress("341 Yonge St.");
-    assertEquals(person.getAddress(), "341 Yonge St.");
+    assertEquals("341 Yonge St.", person.getAddress());
   }
 
   @Test
   public void testSetPhoneNumber() {
     person.setPhoneNumber("416-641-4358");
-    assertEquals(person.getPhoneNumber(), "416-641-4358");
+    assertEquals("416-641-4358", person.getPhoneNumber());
   }
 }
