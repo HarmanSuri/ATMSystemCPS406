@@ -18,28 +18,41 @@ public class BankTest {
 
   @Test
   public void testGetName() {
-    Bank bank = new Bank("Bank", "12 Money St.", null, null);
+    Bank bank = new Bank("Bank", "12 Money St.", 0, null, null);
     assertEquals("Bank", bank.getName());
   }
 
   @Test
   public void testGetAddress() {
-    Bank bank = new Bank("Bank", "12 Money St.", null, null);
+    Bank bank = new Bank("Bank", "12 Money St.", 0, null, null);
     assertEquals("12 Money St.", bank.getAddress());
   }
 
   @Test
+  public void testGetBankID() {
+    Bank bank = new Bank("Bank", "12 Money St.", 0, null, null);
+    assertEquals(0, bank.getBankID());
+  }
+
+  @Test
   public void testSetName() {
-    Bank bank = new Bank("Bank", "12 Money St.", null, null);
+    Bank bank = new Bank("Bank", "12 Money St.", 0, null, null);
     bank.setName("Canadian Bank");
     assertEquals("Canadian Bank", bank.getName());
   }
 
   @Test
   public void testSetAddress() {
-    Bank bank = new Bank("Bank", "12 Money St.", null, null);
+    Bank bank = new Bank("Bank", "12 Money St.", 0, null, null);
     bank.setAddress("23 Yonge St.");
     assertEquals("23 Yonge St.", bank.getAddress());
+  }
+
+  @Test
+  public void testSetBankID() {
+    Bank bank = new Bank("Bank", "12 Money St.", 0, null, null);
+    bank.setBankID(1);
+    assertEquals( 1, bank.getBankID());
   }
 
   @Test
@@ -51,7 +64,7 @@ public class BankTest {
       put(0, new Customer("John Doe", "123 Nowhere St.", "123-456-7890", 0, null, 468, 1784));
     }};
 
-    Bank bank = new Bank("Bank", "12 Money St.", bankDB, custDB);
+    Bank bank = new Bank("Bank", "12 Money St.", 0, bankDB, custDB);
     assertEquals(false, bank.checkCard(736));
   }
 
@@ -64,7 +77,7 @@ public class BankTest {
       put(0, new Customer("John Doe", "123 Nowhere St.", "123-456-7890", 0, null, 468, 1784));
     }};
 
-    Bank bank = new Bank("Bank", "12 Money St.", bankDB, custDB);
+    Bank bank = new Bank("Bank", "12 Money St.", 0, bankDB, custDB);
     assertEquals(true, bank.checkCard(468));
   }
 
@@ -77,7 +90,7 @@ public class BankTest {
       put(0, new Customer("John Doe", "123 Nowhere St.", "123-456-7890", 0, null, 468, 1784));
     }};
 
-    Bank bank = new Bank("Bank", "12 Money St.", bankDB, custDB);
+    Bank bank = new Bank("Bank", "12 Money St.", 0, bankDB, custDB);
     assertEquals(null, bank.login(468, 1111));
   }
 
@@ -91,7 +104,7 @@ public class BankTest {
       put(0, customer);
     }};
 
-    Bank bank = new Bank("Bank", "12 Money St.", bankDB, custDB);
+    Bank bank = new Bank("Bank", "12 Money St.", 0, bankDB, custDB);
     assertEquals(customer, bank.login(468, 1784));
   }
 
@@ -104,7 +117,7 @@ public class BankTest {
       put(0, new Customer("John Doe", "123 Nowhere St.", "123-456-7890", 0, null, 468, 1784));
     }};
 
-    Bank bank = new Bank("Bank", "12 Money St.", bankDB, custDB);
+    Bank bank = new Bank("Bank", "12 Money St.", 0, bankDB, custDB);
     assertArrayEquals(null, bank.getAccount(0));
   }
 
@@ -123,7 +136,7 @@ public class BankTest {
       put(0, customer);
     }};
 
-    Bank bank = new Bank("Bank", "12 Money St.", bankDB, custDB);
+    Bank bank = new Bank("Bank", "12 Money St.", 0, bankDB, custDB);
     assertArrayEquals(accounts, bank.getAccount(0));
   }
 }

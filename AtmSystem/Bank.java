@@ -5,12 +5,14 @@ import java.util.HashMap;
 public class Bank {
   private String name;
   private String address;
+  private int bankID;
   private HashMap<Integer, Integer> bankDB;
   private HashMap<Integer, Customer> custDB;
 
-  public Bank(String name, String address, HashMap<Integer, Integer> bankDB, HashMap<Integer, Customer> custDB) {
+  public Bank(String name, String address, int bankID, HashMap<Integer, Integer> bankDB, HashMap<Integer, Customer> custDB) {
     this.name = name;
     this.address = address;
+    this.bankID = bankID;
     this.bankDB = bankDB;
     this.custDB = custDB;
   }
@@ -23,12 +25,20 @@ public class Bank {
     return address;
   }
 
+  public int getBankID() {
+    return bankID;
+  }
+
   public void setName(String name) {
     this.name = name;
   }
 
   public void setAddress(String address) {
     this.address = address;
+  }
+
+  public void setBankID(int bankID) {
+    this.bankID = bankID;
   }
 
   public boolean checkCard(int cardNum) {
