@@ -14,6 +14,23 @@ public class Bank {
     this.bankDB = bankDB;
     this.custDB = custDB;
   }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
   public boolean checkCard(int cardNum) {
     if (bankDB.get(cardNum) == null) {
       return false;

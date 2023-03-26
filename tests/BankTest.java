@@ -15,6 +15,33 @@ import AtmSystem.SavingsAccount;
 
 
 public class BankTest {
+
+  @Test
+  public void testGetName() {
+    Bank bank = new Bank("Bank", "12 Money St.", null, null);
+    assertEquals("Bank", bank.getName());
+  }
+
+  @Test
+  public void testGetAddress() {
+    Bank bank = new Bank("Bank", "12 Money St.", null, null);
+    assertEquals("12 Money St.", bank.getAddress());
+  }
+
+  @Test
+  public void testSetName() {
+    Bank bank = new Bank("Bank", "12 Money St.", null, null);
+    bank.setName("Canadian Bank");
+    assertEquals("Canadian Bank", bank.getName());
+  }
+
+  @Test
+  public void testSetAddress() {
+    Bank bank = new Bank("Bank", "12 Money St.", null, null);
+    bank.setAddress("23 Yonge St.");
+    assertEquals("23 Yonge St.", bank.getAddress());
+  }
+
   @Test
   public void testCheckCard1() {
     HashMap<Integer, Integer> bankDB = new HashMap<Integer, Integer>() {{
