@@ -1,5 +1,6 @@
 package tests;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -73,14 +74,14 @@ public class CustomerTest {
     public void testGetAccount1() {
         Account[] accAll = { acc1, acc2, acc3, acc4 };
         Customer customer = new Customer("John Doe", "123 Nowhere St.", "123-456-7890", 1, accAll, 9999, 1234);
-        assertEquals(accAll, customer.getAccounts());
+        assertArrayEquals(accAll, customer.getAccounts());
     }
 
     @Test
     public void testGetAccount2() {
         Account[] acc = { acc1, acc2, acc3 };
         Customer customer = new Customer("John Doe", "123 Nowhere St.", "123-456-7890", 1, acc, 9999, 1234);
-        assertEquals(acc, customer.getAccounts());
+        assertArrayEquals(acc, customer.getAccounts());
     }
 
     @Test
