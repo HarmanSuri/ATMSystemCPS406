@@ -1,7 +1,7 @@
 package AtmSystem;
 
 import java.util.HashMap;
-import java.util.LinkedList;
+
 public class Bank {
   private String name;
   private String address;
@@ -31,9 +31,10 @@ public class Bank {
     }
     return cust;
   }
-  public LinkedList<Account> getAccount(int custId) {
+  public Account[] getAccount(int custId) {
     Customer cust = custDB.get(custId);
     if (cust == null) {
+      System.out.println("nill");
       return null;
     }
     return cust.getAccounts();

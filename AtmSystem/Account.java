@@ -1,6 +1,6 @@
 package AtmSystem;
 
-abstract class Account {
+public abstract class Account {
   private double balance, withdrawLimit;
   private int accID;
 
